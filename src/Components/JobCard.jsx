@@ -6,6 +6,14 @@ import DetailBanner from './DetailBanner'
 import DetailList from './DetailList'
 import '../App.css';
 
+async function handleAccept(){
+    return
+}
+
+async function handleReject(){
+    return
+}
+
 export default function JobCard(props) {
     const { jobCompany, jobTitle } = props
     return (
@@ -38,8 +46,20 @@ export default function JobCard(props) {
                         justifyContent:'space-evenly' 
                     }}
                 >
-                    <ActionButton buttonText="No, Thanks" buttonTheme="secondary"/>
-                    <ActionButton buttonText="I'll take it" buttonTheme="primary"/>
+                    <ActionButton 
+                        buttonText="No, Thanks" 
+                        buttonColor="secondary" 
+                        callbacks={
+                            handleReject
+                        }
+                        />
+                    <ActionButton 
+                        buttonText="I'll take it" 
+                        buttonColor="primary"
+                        callbacks={
+                            handleAccept
+                        }
+                        />
                 </Stack>
             </CardActions>
         </Card>
