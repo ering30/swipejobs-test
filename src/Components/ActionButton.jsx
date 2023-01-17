@@ -7,6 +7,7 @@ export default function ActionButton(props) {
         <>
             <Button
             variant='contained'
+            size='large'
             elevation={0}
             disableRipple={true}>
                 {buttonText}

@@ -19,7 +19,7 @@ export default function Header() {
         <>
         <AppBar className={classes.appbar} position="static" elevation={0} >
             <Toolbar className={classes.appbarWrapper} >
-            <h1 >SwipeJobs Logo</h1>
+            <h1 >Swipejobs</h1>
             <UserMenu />
             </Toolbar>
         </AppBar>

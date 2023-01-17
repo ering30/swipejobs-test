@@ -11,6 +11,9 @@ export default function JobCard(props) {
         <Card sx={{
             bgcolor: "#ffffff",
             mt: '2%',
+            margin: '5% auto 5% auto',
+            width: '95%',
+            borderRadius: '5px',
         }} elevation={0}>
             <CardMedia 
                 component="img"
@@ -24,7 +27,7 @@ export default function JobCard(props) {
             <DetailBanner jobDistance="test" jobHourlyRate="test" />
             <DetailList />
             <CardActions >
-                <Stack direction="row"  sx={{margin: '0 auto', width:'95%'}}>
+                <Stack direction="row"  sx={{margin: '0 auto', width:'100%', pt:'5%', justifyContent:'space-evenly' }}>
                     <ActionButton buttonText="No, Thanks" buttonTheme="secondary"/>
                     <ActionButton buttonText="I'll take it" buttonTheme="primary"/>
                 </Stack>
