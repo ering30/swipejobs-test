@@ -2,6 +2,7 @@ import { AppBar, Toolbar } from '@mui/material'
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import UserMenu from './UserMenu';
+import '../App.css';
 
 const useStyles = makeStyles((theme) => ({
     appbar: {
@@ -17,7 +18,7 @@ export default function Header() {
     const classes = useStyles();
     return (
         <>
-        <AppBar className={classes.appbar} position="static" elevation={0} >
+        <AppBar class="appbar" position="static" elevation={0} >
             <Toolbar className={classes.appbarWrapper} >
             <h1 >Swipejobs</h1>
             <UserMenu />

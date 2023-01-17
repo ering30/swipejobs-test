@@ -4,6 +4,7 @@ import React from 'react'
 import ActionButton from './ActionButton'
 import DetailBanner from './DetailBanner'
 import DetailList from './DetailList'
+import '../App.css';
 
 export default function JobCard(props) {
     const { jobCompany, jobTitle } = props
@@ -17,7 +18,7 @@ export default function JobCard(props) {
         }} elevation={0}>
             <CardMedia 
                 component="img"
-                height="100"
+                height="150"
                 image={`url(${process.env.PUBLIC_URL + '/assets/placeholderimg.png'})`}
             />
             <CardContent >
@@ -27,7 +28,16 @@ export default function JobCard(props) {
             <DetailBanner jobDistance="test" jobHourlyRate="test" />
             <DetailList />
             <CardActions >
-                <Stack direction="row"  sx={{margin: '0 auto', width:'100%', pt:'5%', justifyContent:'space-evenly' }}>
+                <Stack 
+                    direction="row" 
+                    sx={{
+                        margin: '0 auto', 
+                        width:'100%', 
+                        pt:'5%', 
+                        pb: '5%', 
+                        justifyContent:'space-evenly' 
+                    }}
+                >
                     <ActionButton buttonText="No, Thanks" buttonTheme="secondary"/>
                     <ActionButton buttonText="I'll take it" buttonTheme="primary"/>
                 </Stack>

@@ -17,7 +17,7 @@ import JobCard from './Components/JobCard';
 function App() {
   // const classes = useStyles();
   return (
-    <div style={{backgroundColor: '#eeeeee'}} >
+    <div style={{backgroundColor: '#eeeeee', height: '100vh', width: '100vw'}} >
       <CssBaseline />
       <Header />
       <JobCard />

@@ -14,8 +14,8 @@ export default function DetailBanner(props) {
                     }
                 }
             >
-            <h6>Distance</h6>
-            <h6>Hourly Rate</h6>
+            <h6 class="detailBannerLegend">Distance</h6>
+            <h6 class="detailBannerLegend">Hourly Rate</h6>
             </Stack>
             <Stack 
                 direction='row' 
@@ -26,8 +26,8 @@ export default function DetailBanner(props) {
                     }
                 }
             >
-            <h3>{jobDistance}</h3>
-            <h3>{jobHourlyRate}</h3>
+            <h3 class="detailBannerHeading">{jobDistance}</h3>
+            <h3 class="detailBannerHeading">{jobHourlyRate}</h3>
             </Stack>
         </div>
     )
