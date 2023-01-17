@@ -10,6 +10,10 @@ export default function ActionButton(props) {
             size='large'
             elevation={0}
             disableRipple={true}
+            sx={{
+                textTransform: 'none',
+                backgroundColor:'#000000'
+            }}
             >
                 {buttonText}
             </Button>

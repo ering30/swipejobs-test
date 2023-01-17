@@ -17,11 +17,15 @@ export default function UserMenu() {
         <div>
         <Button
             id="basic-button"
-            size='small'
+            size='large'
             aria-controls={open ? 'basic-menu' : undefined}
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
             onClick={handleClick}
+            sx={{
+                textTransform: 'none',
+                color: '#ffffff'
+            }}
         >
             User Name
         </Button>
