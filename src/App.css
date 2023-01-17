@@ -4,8 +4,13 @@
 }
 
 .appbar { 
-  background-color: '#000000';
   color: white;
+  background-color: black;
+}
+
+.appbarWrapper {
+  width: '90vw';
+  margin: 0 auto;
 }
 
 .detailBannerHeading{

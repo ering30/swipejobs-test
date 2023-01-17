@@ -18,7 +18,7 @@ export default function JobCard(props) {
         }} elevation={0}>
             <CardMedia 
                 component="img"
-                height="150"
+                height="140"
                 image={`url(${process.env.PUBLIC_URL + '/assets/placeholderimg.png'})`}
             />
             <CardContent >
