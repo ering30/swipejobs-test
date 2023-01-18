@@ -16,18 +16,8 @@ import HandymanOutlinedIcon from '@mui/icons-material/HandymanOutlined';
 
 export default function DetailList(props) {
     const { job } = props
-    const shiftsList = (job.Shifts) 
-    const reqsList = (job.Requirements)
-
-    console.log(shiftsList, "shifts list");
-    console.log('requirements', reqsList);
-    
-
-    const showList = (list) => {
-        list.map(item => {
-            return <div>{item}</div>
-        })
-    }
+    const shiftsList = (job.shifts) 
+    const reqsList = (job.requirements)
 
     return (
         <div>
@@ -36,12 +26,14 @@ export default function DetailList(props) {
                         <CalendarMonth />
                     </ListItemAvatar>
                     <ListItemText 
-                    primary="Shift Dates"
-                    secondary={
-                        <div>
-                            {() => showList(shiftsList)}
-                        </div>
-                    }/>
+                        primary="Shift Dates"
+                        secondary={
+                            <div>
+                                {shiftsList.map(item => <div key={item}>{item}</div>)}
+                            </div>
+                        }
+                    />
+                    
                 </ListItem>
                 <Divider variant="middle" />
                 <ListItem
@@ -55,13 +47,14 @@ export default function DetailList(props) {
                         <LocationOnOutlinedIcon />
                     </ListItemAvatar>
                     <ListItemText 
-                    primary="Location"
-                    secondary={
-                        <div>
-                            <div>{job.Location}</div>
-                            <div>{job.jobDistance} from your</div>
-                        </div>
-                    }/>
+                        primary="Location"
+                        secondary={
+                            <div>
+                                <div>{job.location}</div>
+                                <div>{job.jobDistance} from your location</div>
+                            </div>
+                        }
+                    />
                 </ListItem>
                 <Divider variant="middle" />
                 <ListItem>
@@ -69,12 +62,13 @@ export default function DetailList(props) {
                         <HandymanOutlinedIcon />
                     </ListItemAvatar>
                     <ListItemText 
-                    primary="Requirements"
-                    secondary={
-                        <div>
-                            {() => showList(reqsList)}
-                        </div>
-                    }/>
+                        primary="Requirements"
+                        secondary={
+                            <div>
+                                {reqsList.map(item => <div key={item}>{item}</div>)}
+                            </div>
+                        }
+                    />
                 </ListItem>
                 <Divider variant="middle" />
                 <ListItem>
@@ -82,8 +76,8 @@ export default function DetailList(props) {
                         <Person />
                     </ListItemAvatar>
                     <ListItemText 
-                    primary="Report To"
-                    secondary={`${job.JobContact.Name}: ${job.JobContact.Contact}`}/>
+                        primary="Report To"
+                        secondary={`${job.jobContact.Name}: ${job.jobContact.Contact}`}/>
                 </ListItem>
         </div>
     )

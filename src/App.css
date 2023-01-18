@@ -1,6 +1,13 @@
-.App {
-  background-color: '#eeeeee';
-  background-position: 'cover';
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.baseDiv {
+  background-color: #eeeeee;
+  background-attachment:fixed ;
+  background-size: cover;
+  min-height: 100vh;
 }
 
 .appbar { 
@@ -9,14 +16,15 @@
 }
 
 .appbarWrapper {
-  width: '90vw';
+  width: 95%;
   margin: 0 auto;
+  display: flex;
+  align-content: center;
 }
 
-.appbarLogo {
+.appbarItem {
   flex-grow: 1;
   flex-shrink: 1;
-
 }
 
 .detailBannerHeading{
@@ -35,8 +43,14 @@
   flex-basis: auto;
   flex-direction: row;
   flex-wrap: nowrap;
+  padding-bottom: 4%;
 }
 
-ActionButton {
-  width: 300pt;
+h5.jobCardTitle {
+  margin-bottom: 0;
+}
+
+h6.jobCardTitle {
+  margin-bottom: 0;
+  font-weight: bold;
 }

@@ -15,15 +15,9 @@ export default function Header(props) {
             }}>
             <Toolbar 
                 class="appbarWrapper" 
-                sx={{
-                    width: '95vw',
-                    margin: '0 auto',
-                    justifyContent: 'space-between',
-                    flexWrap: 'nowrap'
-                }}
             >
-            <h1 class="appbarLogo">swipejobs</h1>
-            <UserMenu worker={worker}/>
+            <h1 class="appbarItem">swipejobs</h1>
+            <UserMenu class="appbarItem" worker={worker}/>
             </Toolbar>
         </AppBar>
         </>

@@ -37,13 +37,13 @@ function App() {
       "jobCompany": "C.D. Barnes & Associates",
       "jobDistance": "5.6 miles",
       "jobHourlyRate": "13.50",
-      "Shifts": [`April 7 8:00AM to 6:00PM AEDT`, `April 8 8:00AM to 6:00PM AEDT`],
-      "Location":"123 Main Street, Tacoma WA 98409",
-      "Requirements": [
+      "shifts": [`April 7 8:00AM to 6:00PM AEDT`, `April 8 8:00AM to 6:00PM AEDT`],
+      "location":"123 Main Street, Tacoma WA 98409",
+      "requirements": [
         "Safety Vest",
         "Hard Hat",
       ],
-      "JobContact": {
+      "jobContact": {
         "Name": "Dave",
         "Contact": "(123) 456 789"
       },
@@ -54,29 +54,29 @@ function App() {
       "jobCompany": "C.D. Barnes & Associates",
       "jobDistance": "5.6 miles",
       "jobHourlyRate": "13.50",
-      "Shifts": [`April 7 8:00AM to 6:00PM AEDT`, `April 8 8:00AM to 6:00PM AEDT`],
-      "Location":"123 Main Street, Tacoma WA 98409",
-      "Requirements": [
+      "shifts": [`April 7 8:00AM to 6:00PM AEDT`, `April 8 8:00AM to 6:00PM AEDT`],
+      "location":"123 Main Street, Tacoma WA 98409",
+      "requirements": [
         "Safety Vest",
         "Hard Hat",
       ],
-      "JobContact": {
+      "jobContact": {
         "Name": "Dave",
         "Contact": "(123) 456 789"
       },
       "imageURL": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Construction-257326.jpg"
     }
   ]
-
+  // create single job for the purposes of single page
   const job = workerJobs[0]
   
   return (
-      <div 
-        style={{
-          backgroundColor: '#eeeeee', 
-          height: '100vh', 
-          width: '100vw'
-        }} 
+      <div class="baseDiv"
+        // style={{
+        //   backgroundColor: '#eeeeee', 
+        //   backgroundAttachment: 'fixed',
+        //   backgroundSize:'cover',
+        // }} 
       >
         <CssBaseline />
         <Header worker={worker}/>

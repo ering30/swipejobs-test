@@ -12,7 +12,7 @@ export default function ActionButton(props) {
 
     return (
         <>
-            <button 
+            <button style={{width: '100%'}}
                 class={buttonClass}
                 onClick={buttonAction}
             >

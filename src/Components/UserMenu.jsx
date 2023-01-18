@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import '../App.css';
 
 export default function UserMenu(props) {
     const userFullName = props.worker.firstName + ' ' + props.worker.lastName
@@ -25,7 +26,8 @@ export default function UserMenu(props) {
             onClick={handleClick}
             sx={{
                 textTransform: 'none',
-                color: '#ffffff'
+                color: '#ffffff',
+                alignSelf: 'flex-end',
             }}
         >
             {userFullName}

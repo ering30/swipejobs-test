@@ -9,16 +9,16 @@ import '../App.css';
 export default function JobCard(props) {
     const { callbacks, job } = props
 
-    const {
-        handleAccept,
-        handleReject,
-    } = callbacks || {}
+    // const {
+    //     handleAccept,
+    //     handleReject,
+    // } = callbacks || {}
 
     return (
         <Card sx={{
             bgcolor: "#ffffff",
             mt: '2%',
-            margin: '5% auto 5% auto',
+            margin: '5% auto 0 auto',
             width: '95%',
             borderRadius: '5px',
         }} elevation={0}>
@@ -29,20 +29,16 @@ export default function JobCard(props) {
             />
             <CardContent >
                 <h4>{job.jobTitle}</h4>
-                <h5>{job.jobCompany}</h5>
+                <h5 class="jobCardTitle">{job.jobCompany}</h5>
             </CardContent>
             <DetailBanner jobDistance={job.jobDistance} jobHourlyRate={job.jobHourlyRate} />
             <DetailList job={job}/>
-            <CardActions >
-                <Stack 
-                    direction="row" 
-                    sx={{
-                        margin: '0 auto', 
-                        width:'100%', 
-                        pt:'5%', 
-                        pb: '5%', 
-                        justifyContent:'space-evenly' 
-                    }}
+            <CardActions sx={{
+                padding: '5% 0 5% 0',
+            }}>
+                <div 
+                    class="d-flex gap-2 mx-auto" 
+                    style={{width:'90%'}}
                 >
                     <ActionButton
                         callbacks={{
@@ -58,7 +54,7 @@ export default function JobCard(props) {
                         buttonText="I'll take it" 
                         buttonClass="btn btn-dark btn-lg"
                         />
-                </Stack>
+                </div>
             </CardActions>
         </Card>
     )
