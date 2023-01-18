@@ -3,7 +3,8 @@ import React from 'react'
 import UserMenu from './UserMenu';
 import '../App.css';
 
-export default function Header() {
+export default function Header(props) {
+    const { worker } = props
     return (
         <>
         <AppBar 
@@ -15,13 +16,14 @@ export default function Header() {
             <Toolbar 
                 class="appbarWrapper" 
                 sx={{
-                    width: '98vw',
+                    width: '95vw',
                     margin: '0 auto',
                     justifyContent: 'space-between',
+                    flexWrap: 'nowrap'
                 }}
             >
-            <h1 >Swipejobs</h1>
-            <UserMenu />
+            <h1 class="appbarLogo">swipejobs</h1>
+            <UserMenu worker={worker}/>
             </Toolbar>
         </AppBar>
         </>

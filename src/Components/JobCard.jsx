@@ -6,16 +6,14 @@ import DetailBanner from './DetailBanner'
 import DetailList from './DetailList'
 import '../App.css';
 
-async function handleAccept(){
-    return
-}
-
-async function handleReject(){
-    return
-}
-
 export default function JobCard(props) {
-    const { jobCompany, jobTitle } = props
+    const { callbacks, job } = props
+
+    const {
+        handleAccept,
+        handleReject,
+    } = callbacks || {}
+
     return (
         <Card sx={{
             bgcolor: "#ffffff",
@@ -27,14 +25,14 @@ export default function JobCard(props) {
             <CardMedia 
                 component="img"
                 height="140"
-                image={`url(${process.env.PUBLIC_URL + '/assets/placeholderimg.png'})`}
+                image={job.imageURL}
             />
             <CardContent >
-                <h4>{jobTitle}</h4>
-                <h5>{jobCompany}</h5>
+                <h4>{job.jobTitle}</h4>
+                <h5>{job.jobCompany}</h5>
             </CardContent>
-            <DetailBanner jobDistance="test" jobHourlyRate="test" />
-            <DetailList />
+            <DetailBanner jobDistance={job.jobDistance} jobHourlyRate={job.jobHourlyRate} />
+            <DetailList job={job}/>
             <CardActions >
                 <Stack 
                     direction="row" 
@@ -46,19 +44,19 @@ export default function JobCard(props) {
                         justifyContent:'space-evenly' 
                     }}
                 >
-                    <ActionButton 
+                    <ActionButton
+                        callbacks={{
+                            // buttonAction: () => handleReject(), // in useJobs callbacks
+                        }}
                         buttonText="No, Thanks" 
-                        buttonColor="secondary" 
-                        callbacks={
-                            handleReject
-                        }
-                        />
+                        buttonClass="btn btn-outline-secondary btn-lg" 
+                    />
                     <ActionButton 
+                        callbacks={{
+                            // buttonAction: () => handleAccept(), // in useJobs callbacks
+                        }}
                         buttonText="I'll take it" 
-                        buttonColor="primary"
-                        callbacks={
-                            handleAccept
-                        }
+                        buttonClass="btn btn-dark btn-lg"
                         />
                 </Stack>
             </CardActions>

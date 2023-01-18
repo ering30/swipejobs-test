@@ -3,7 +3,8 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
-export default function UserMenu() {
+export default function UserMenu(props) {
+    const userFullName = props.worker.firstName + ' ' + props.worker.lastName
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -27,7 +28,7 @@ export default function UserMenu() {
                 color: '#ffffff'
             }}
         >
-            User Name
+            {userFullName}
         </Button>
         <Menu
             id="basic-menu"

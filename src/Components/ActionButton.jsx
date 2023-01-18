@@ -1,23 +1,23 @@
-import { Button } from '@mui/material'
 import React from 'react'
 
+
 export default function ActionButton(props) {
-    const {buttonText, buttonColor} = props
+    const { 
+        callbacks: {
+            buttonAction,
+        },
+        buttonText, 
+        buttonClass 
+    } = props
+
     return (
         <>
-            <Button
-            variant='contained'
-            size='x-large'
-            elevation={0}
-            disableRipple={true}
-            sx={{
-                textTransform: 'none',
-                backgroundColor:'#000000'
-            }}
-            // onClick={buttonAction}
+            <button 
+                class={buttonClass}
+                onClick={buttonAction}
             >
                 {buttonText}
-            </Button>
+            </button>
         </>
     )
 }

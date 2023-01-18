@@ -14,7 +14,21 @@ import {
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import HandymanOutlinedIcon from '@mui/icons-material/HandymanOutlined';
 
-export default function DetailList() {
+export default function DetailList(props) {
+    const { job } = props
+    const shiftsList = (job.Shifts) 
+    const reqsList = (job.Requirements)
+
+    console.log(shiftsList, "shifts list");
+    console.log('requirements', reqsList);
+    
+
+    const showList = (list) => {
+        list.map(item => {
+            return <div>{item}</div>
+        })
+    }
+
     return (
         <div>
                 <ListItem>
@@ -25,8 +39,7 @@ export default function DetailList() {
                     primary="Shift Dates"
                     secondary={
                         <div>
-                            <div>Shift 1</div>
-                            <div>Shift 2</div>
+                            {() => showList(shiftsList)}
                         </div>
                     }/>
                 </ListItem>
@@ -45,8 +58,8 @@ export default function DetailList() {
                     primary="Location"
                     secondary={
                         <div>
-                            <div>Address</div>
-                            <div>Distance</div>
+                            <div>{job.Location}</div>
+                            <div>{job.jobDistance} from your</div>
                         </div>
                     }/>
                 </ListItem>
@@ -59,8 +72,7 @@ export default function DetailList() {
                     primary="Requirements"
                     secondary={
                         <div>
-                            <div>item 1</div>
-                            <div>item 2</div>
+                            {() => showList(reqsList)}
                         </div>
                     }/>
                 </ListItem>
@@ -71,7 +83,7 @@ export default function DetailList() {
                     </ListItemAvatar>
                     <ListItemText 
                     primary="Report To"
-                    secondary="Name & Contact Details"/>
+                    secondary={`${job.JobContact.Name}: ${job.JobContact.Contact}`}/>
                 </ListItem>
         </div>
     )

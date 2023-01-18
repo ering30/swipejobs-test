@@ -27,7 +27,11 @@ export default function DetailBanner(props) {
                 }
             >
             <h3 class="detailBannerHeading">{jobDistance}</h3>
-            <h3 class="detailBannerHeading">{jobHourlyRate}</h3>
+            <div class="bannerContainer">
+
+                <h3 class="detailBannerHeading">{jobHourlyRate}</h3>
+            </div>
+            
             </Stack>
         </div>
     )
